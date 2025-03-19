@@ -1,0 +1,259 @@
+        body {
+            background-color: #f0fdf4;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .folder {
+            width: 470px;
+            height: auto;
+            margin: 5em auto 2em;
+            border-radius: 5px 25px 25px 25px;
+            filter: drop-shadow(0 0 0.75rem grey);
+            background: white;
+            position: absolute;
+            top: 47%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out, z-index 0.5s ease-in-out;
+            z-index: 1;
+        }
+        .folder::before {
+            content: '';
+            position: absolute;
+            top: -18px;
+            width: 200px;
+            height: 25px;
+            background: white;
+            border-radius: 25px 0 0 0;
+            clip-path: path('M 0 0 L 160 0 C 185 2, 175 16, 200 18 L 0 50 z');
+        }
+        .folder::after {
+            content: '';
+            position: absolute;
+            left: 40px;
+            width: 85px;
+            height: 5px;
+            top: -18px;
+            background: #1CA659;
+            border-radius: 0 0 5px 5px;
+        }
+        .folder.active {
+            opacity: 1;
+            z-index: 10;         }
+        .folder.answered {
+            transform: translate(-50%, -50%) translateY(calc(var(--stack-offset, -45px) * var(--index, 1))) scale(0.95);
+            opacity: 0.7;
+            z-index: 0; 
+        }
+        .tracker {
+            display: flex;
+            position:relative;
+            top: -60px;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .step {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: #ffffff;
+            margin: 0 5px;
+            border: 2px solid #1CA659;
+        }
+        .step.active {
+            background-color: #1CA659;
+        }
+        .nav-buttons {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 400px; 
+            z-index: 20;
+            position: relative; 
+        }
+        .btn-primary, .btn-success {
+            background-color: #1CA659;
+            border: none;
+        }
+        .btn-primary:hover, .btn-success:hover {
+            background-color: #1CA659;
+        }
+
+.checkbox-wrapper-46 input[type="checkbox"] {
+    display: none;
+    visibility: hidden;
+  }
+  
+  .checkbox-wrapper-46 .cbx {
+    margin: auto;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: pointer;
+  }
+  .checkbox-wrapper-46 .cbx span {
+    display: inline-block;
+    vertical-align: middle;
+    transform: translate3d(0, 0, 0);
+  }
+  .checkbox-wrapper-46 .cbx span:first-child {
+    position: relative;
+    width: 18px;
+    height: 18px;
+    border-radius: 3px;
+    transform: scale(1);
+    vertical-align: middle;
+    border: 1px solid #9098a9;
+    transition: all 0.2s ease;
+  }
+  .checkbox-wrapper-46 .cbx span:first-child svg {
+    position: absolute;
+    top: 3px;
+    left: 2px;
+    fill: none;
+    stroke: #ffffff;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 16px;
+    stroke-dashoffset: 16px;
+    transition: all 0.3s ease;
+    transition-delay: 0.1s;
+    transform: translate3d(0, 0, 0);
+  }
+  .checkbox-wrapper-46 .cbx span:first-child:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: #1CA659;
+    display: block;
+    transform: scale(0);
+    opacity: 1;
+    border-radius: 50%;
+  }
+  .checkbox-wrapper-46 .cbx span:last-child {
+    padding-left: 8px;
+  }
+  .checkbox-wrapper-46 .cbx:hover span:first-child {
+    border-color: #1CA659;
+  }
+  
+  .checkbox-wrapper-46 .inp-cbx:checked + .cbx span:first-child {
+    background: #1CA659;
+    border-color: #1CA659;
+    animation: wave-46 0.4s ease;
+  }
+  .checkbox-wrapper-46 .inp-cbx:checked + .cbx span:first-child svg {
+    stroke-dashoffset: 0;
+  }
+  .checkbox-wrapper-46 .inp-cbx:checked + .cbx span:first-child:before {
+    transform: scale(3.5);
+    opacity: 0;
+    transition: all 0.6s ease;
+  }
+  
+  @keyframes wave-46 {
+    50% {
+      transform: scale(0.9);
+    }
+  }
+  
+.radio-button-container {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+  
+  .radio-button {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .radio-button__input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .radio-button__label {
+    display: inline-block;
+    padding-left: 30px;
+    margin-bottom: 10px;
+    position: relative;
+    font-size: 15px;
+    color: #6d6868;
+    font-weight: 600;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+  }
+  
+  .radio-button__custom {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #555;
+    transition: all 0.3s ease;
+  }
+  
+  .radio-button__input:checked + .radio-button__label .radio-button__custom {
+    background-color: #1CA659;
+    border-color: transparent;
+    transform: scale(0.8);
+    box-shadow: 0 0 20px #1CA659;
+  }
+  
+  .radio-button__input:checked + .radio-button__label {
+    color: #000000;
+  }
+  
+  .radio-button__label:hover .radio-button__custom {
+    transform: scale(1.1);
+    border-color: #1CA659;
+    box-shadow: 0 0 20px #1CA659;
+  }
+  
+  
+  
+  
+  /* From Uiverse.io by kamehame-ha */ 
+.coolinput {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    position: static;
+    max-width: 240px;
+  }
+  
+  .coolinput label.text {
+    font-size: 0.75rem;
+    color: #1CA659;
+    font-weight: 700;
+    position: relative;
+    top: 0.5rem;
+    margin: 0 0 0 7px;
+    padding: 0 3px;
+    background: #e8e8e8;
+    width: fit-content;
+  }
+  
+  .coolinput input[type=text].input {
+    padding: 11px 10px;
+    font-size: 0.75rem;
+    border: 2px #1CA659  solid;
+    border-radius: 5px;
+    background: #fafafa;
+  }
+  
+  .coolinput input[type=text].input:focus {
+    outline: none;
+  }
+  
